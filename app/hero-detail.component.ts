@@ -4,7 +4,7 @@ import { Hero } from '../app/hero';
 
 @Component({
   selector: 'my-hero-detail',
-  templateUrl: `
+  template: `
               <div *ngIf="hero">
                 <h2>{{hero.name}} details!</h2>
 
