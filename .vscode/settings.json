@@ -1,5 +1,11 @@
 // Coloque su configuración en este archivo para sobrescribir la configuración predeterminada y de usuario.
 {
     "editor.tabSize": 2,
-    "eslint.enable": false
+    "eslint.enable": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "app/*.js": true,
+        "app/*.js.map": true
+    }
 }

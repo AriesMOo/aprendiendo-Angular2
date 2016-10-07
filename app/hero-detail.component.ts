@@ -8,7 +8,7 @@ import { Hero } from '../app/hero';
               <div *ngIf="hero">
                 <h2>{{hero.name}} details!</h2>
 
-                <div *ngIf="hero">
+                <div>
                   <label>id: </label> {{hero.id}}
                 </div>
                 <div>
@@ -18,6 +18,5 @@ import { Hero } from '../app/hero';
               </div>`
 })
 export class HeroDetailComponent {
-  @Input()
-  hero: Hero;
+  @Input() hero: Hero;
  }
