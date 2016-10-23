@@ -23,4 +23,12 @@ export class HeroService {
       .then( () => this.getHeroes() )
       .catch( (error) => console.log(error) );
   }
+
+  getHero(id: Number): Promise<Hero> {
+    // GetHeroes devuelve una promesa con un array de heroes
+    // El metodo find es un metodo de los array JS. Encuentra el primer elemento
+    // que coincida con la expresion booleana (creo)
+    return this.getHeroes()
+            .then(heroes => heroes.find(hero => hero.id === id));
+  }
 }
