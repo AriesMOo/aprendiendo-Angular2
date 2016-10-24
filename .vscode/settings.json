@@ -7,5 +7,9 @@
         "**/.DS_Store": true,
         "app/*.js": true,
         "app/*.js.map": true
-    }
+    },
+    // Del typescript toolbox
+    "genGetSet.spacedImportLine": true,
+    // De auto-import
+    "autoimport.spaceBetweenBraces": true
 }

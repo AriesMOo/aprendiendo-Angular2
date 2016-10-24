@@ -1,15 +1,30 @@
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
+import 'rxjs/add/operator/toPromise';
+
 import { Hero } from './hero';
-import { HEROES } from '../app/mock-heroes';
 
 @Injectable()
 export class HeroService {
+  private heroesUrl = 'app/heroes';
 
+  constructor(
+    private http: Http
+  ) {}
+
+  getHeroes(): Promise<Hero[]> {
+    return this.http.get(this.heroesUrl)
+               .toPromise()  // Por defecto Http.get devuelve un Observable
+               .then(response => response.json().data as Hero[])
+               .catch(this.handleError);
+  }
+
+  /* Se va a utilizar un nuevo getHeroes() para el cliente HTTP ;)
   getHeroes(): Promise<Hero[]> {
     // Resolvemos la promesa y enviamos el array tal cual de objetos HEROES
     return Promise.resolve(HEROES);
-  }
+  }*/
 
   getHeroesSlowly(): Promise<Hero[]> {
     // Patron encadenadmiento metodos (cada metodo devuelve el propio objeto
