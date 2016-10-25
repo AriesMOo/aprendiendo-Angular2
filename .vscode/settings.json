@@ -11,5 +11,13 @@
     // Del typescript toolbox
     "genGetSet.spacedImportLine": true,
     // De auto-import
-    "autoimport.spaceBetweenBraces": true
+    "autoimport.spaceBetweenBraces": true,
+    // Este es el "malo" supuestamente
+    "TodoParser": {
+      "exclude": [".js.map", "d.ts"],
+      "folderExclude": ["node_modules", ".vscode", ".git", ".DS_Store", "e2e"],
+      "markers": ["NOTE:", "REMINDER:", "FIXME:", "DUDA:"]
+    },
+    // Este es el que tiene buena pinta, pero que tiene una config ho-rri-ble !!
+    "todoIgnore":   ["**/node_modules/**", "**/.vscode/**", "**/.git/**"]
 }
